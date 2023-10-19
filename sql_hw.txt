@@ -1,0 +1,11 @@
+create TABLE users(
+user_id integer PRIMARY KEY AUTO_INCREMENT,
+user_name varchar(50) NOT NULL,
+email varchar(100) UNIQUE,
+age integer check(age BETWEEN 0 AND 140),
+gender char(1) check(gender IN ('m', 'f'))
+);
+INSERT INTO users (user_name, email, age)
+VALUES ('John Doe', 'johndoe@example.com', 30);
+INSERT INTO users (user_name, email, age)
+VALUES ('Jane Smith', 'janesmith@example.com', 25);
